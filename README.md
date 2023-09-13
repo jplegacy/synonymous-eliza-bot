@@ -17,3 +17,9 @@ It also can be integrated into a Slackbot. Look below on how to set up.
 Follow instructions as defined on [here](https://www.pragnakalp.com create-slack-bot-using-python-tutorial-with-examples/). To integrate it into a slackbot,
 a bot must be configured with specific granted writes. More info can be found there.
 
+### After Slackbot Configured
+
+Run the following in seperate terminals
+    ngrok http 5000
+    python3 client.py
+
