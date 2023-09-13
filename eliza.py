@@ -2,17 +2,16 @@
 import random
 import sys
 
-class ChatAgent: #replace this with your last name, like SchlueterChatAgent
-    """ChatAgent - This is a very simple ELIZA-like computer program in python.
-      Your assignent in Programming Assignment 1 is to improve upon it.
+class JeremyChatAgent: 
+    """
+    Basic Eliza-Based Chatbot which can be set up as a Slackbot.
 
-      I've created this as a python object so that your agents can chat with one another
-      (and also so you can have some practice with python objects)
-      """
+    Follow instructions as defined on https://www.pragnakalp.com/create-slack-bot-using-python-tutorial-with-examples/
+    """
    
     def generateReply(self,inString):
        """Pick a random function, and call it on the input string """
-       randFunction = random.choice(self.ReplyFunctionList) #pick a random function, I love python
+       randFunction = random.choice(self.ReplyFunctionList)
        reply = randFunction(inString) 
        return reply
  
@@ -31,8 +30,18 @@ class ChatAgent: #replace this with your last name, like SchlueterChatAgent
 
            self.recordDialog(response,reply)
 
-           #print(reply)
-           
+    
+    def reply(self, dialog):
+        response = dialog
+        self.historyInput.append(response)
+
+        reply = self.generateReply(response)
+        self.historyResponse.append(reply)
+
+        self.recordDialog(response,reply)
+
+        return reply
+
     def recordDialog(self, inputs, output):
         self.historyInput.append(inputs)
         self.historyResponse.append(output)
@@ -125,5 +134,5 @@ if __name__ == '__main__': #will only be called if this is invoked directly by p
 
     #program starts here
     random.seed() #if given no value, it uses system time
-    agent = ChatAgent()
+    agent = JeremyChatAgent()
     agent.driverLoop()
