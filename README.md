@@ -8,6 +8,7 @@ ELIZA was a computer program written by Joseph Weizenbaum in the 1960s which inc
 
 ## How to run
 This bot can be used strictly in the terminal if eliza.py
+
     python3 eliza.py
 
 It also can be integrated into a Slackbot. Look below on how to set up.
@@ -20,6 +21,7 @@ a bot must be configured with specific granted writes. More info can be found th
 ### After Slackbot Configured
 
 Run the following in seperate terminals
+
     ngrok http 5000
     python3 client.py
 
