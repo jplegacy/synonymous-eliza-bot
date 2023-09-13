@@ -22,7 +22,7 @@ slack_event_adapter = SlackEventAdapter(SIGNING_SECRET, '/slack/events', app)
 
 client = slack.WebClient(token=SLACK_TOKEN)
 
-# Agent History
+# Ongoing Bot Conversations for each User History
 agents = {}
 
 # mutex
