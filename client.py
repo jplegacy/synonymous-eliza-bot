@@ -6,11 +6,14 @@ from slackeventsapi import SlackEventAdapter
 from tokens import tokens
 from eliza import JeremyChatAgent
 
-SLACK_TOKEN = tokens.get('SLACK_TOKEN', "<TOKEN GOES HERE>")
-SIGNING_SECRET = tokens.get('SIGNING_TOKEN', "<TOKEN GOES HERE>")
+
+# check README for more information
+SLACK_TOKEN = tokens.get('SLACK_TOKEN')
+SIGNING_SECRET = tokens.get('SIGNING_TOKEN')
 
 
-if SLACK_TOKEN == "<TOKEN GOES HERE>" or SIGNING_SECRET == "SIGNING_SECRET":
+# Makes sure tokens exist
+if SLACK_TOKEN == "<ADD-TOKEN>" or SIGNING_SECRET == "<ADD-TOKEN>":
     print("Unable to Start")
     quit
 
