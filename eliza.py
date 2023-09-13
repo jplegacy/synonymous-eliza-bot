@@ -13,7 +13,7 @@ class JeremyChatAgent:
        """Pick a random function, and call it on the input string """
        randFunction = random.choice(self.ReplyFunctionList)
        reply = randFunction(inString) 
-       return reply
+       return reply + ":"
  
     def driverLoop(self):
        """The main driver loop for the chat agent"""
@@ -103,6 +103,15 @@ class JeremyChatAgent:
         longest = max(inWordList, key=len)
         
         return longest
+    
+    def termWonder(self,inString):
+        term = self.interstingTerm(inString)
+        explainatoryQue = random.choice(self.questionList)
+        corr = random.choice(self.correlationList)
+
+
+        return ''.join([explainatoryQue, term,corr])
+
 
             
     def __init__(self):
@@ -120,7 +129,10 @@ class JeremyChatAgent:
        self.historyInput = []
        self.questions = [", how does this change things", ", how does this affect your life"]
 
-       self.ReplyFunctionList = [self.generateHedge,self.changePersonAndAddPrefix] #this is what makes Python so powerful
+       self.questionList = ["What does ", "What will "]
+       self.correlationList = [" mean to you", " mean to this world"]
+
+       self.ReplyFunctionList = [self.generateHedge,self.changePersonAndAddPrefix, self.termWonder] #this is what makes Python so powerful
    
        self.longConversation = False
 
