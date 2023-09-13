@@ -15,8 +15,8 @@ It also can be integrated into a Slackbot. Look below on how to set up.
 
 ## How to set up Slack Bot
 
-Follow instructions as defined on [here](https://www.pragnakalp.com create-slack-bot-using-python-tutorial-with-examples/). To integrate it into a slackbot,
-a bot must be configured with specific granted writes. More info can be found there.
+Follow instructions as defined on [here](https://www.pragnakalp.com/create-slack-bot-using-python-tutorial-with-examples/). To integrate it into a slackbot,
+a bot must be configured with specific rights. More info can be found there.
 
 ### After Slackbot Configured
 

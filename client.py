@@ -35,13 +35,17 @@ def message(payload):
     channel_id = event.get('channel')
     user_id = event.get('user')
     text = event.get('text')
- 
+
+
+    # Interacts with Mutex
     lock.acquire()
 
+    # Initiates conversation
     if text == "START":
         agents[user_id] = JeremyChatAgent()
         client.chat_postMessage(channel=channel_id, text="How are you today?")
     
+    # Continues conversation based on userID
     elif agents.get(user_id) != None:
         response = agents[user_id].reply(text)
         client.chat_postMessage(channel=channel_id, text=response)
