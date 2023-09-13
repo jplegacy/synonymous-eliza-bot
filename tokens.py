@@ -1,7 +1,0 @@
-
-# TOKENS CORILATED TO SLACK BOT
-
-tokens = {
-    'SLACK_TOKEN': "<ADD-TOKEN>",
-    'SIGNING_TOKEN':"<ADD-TOKEN>"
-}
